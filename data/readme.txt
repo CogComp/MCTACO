@@ -23,13 +23,13 @@ sentence \t  question \t  answer \t label \t category
  * sentence: a sentence where the question is based on.
  * question: a question querying some temporal knowledge.
  * answer: a potential answer to the question. all lowercase. 
- * label: whether the answer is a correct (likely) answer. "yes" indicates the answer is correct, "no" otherwise.
+ * label: whether the answer is a correct (likely) answer. "yes" indicates the answer is likely, "no" otherwise.
  * category: the temporal category the question belongs to one of Event Ordering, Event  Duration", Frequency, Stationarity, or Typical Time. 
 
 ===========
 EVALUATION
 ===========
-Each question corresponds to multiple candidate answers, and each question can have no correct answer or many.
+Each question corresponds to multiple candidate answers, and each question can have no "likely" answer or many.
 During the test time, the system should only see one question-answer pair at a time, and the gold label/category should not be used if compared with the baselines.
 For evaluation metrics, please refer to the paper.
 
