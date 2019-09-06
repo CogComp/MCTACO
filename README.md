@@ -7,7 +7,16 @@ We provide the dev/test split as specified in the paper, along with a detailed r
 ## Experiments (WIP)
 At this point, we provide the outputs of the ESIM/BERT baselines. 
 
-In progress: we will release the code to run the baselines after some cleaning.
+To run BERT baseline: 
+
+First install required packages with `pip install -r experiments/bert/requirements.txt`
+
+`sh experiments/bert/run_bert_baseline.sh`
+- This will produce results by default under ./bert_output, which you can further evaluate with
+
+`python experiments/evaluator.py eval --test_file data/test_9442.tsv --prediction_file bert_output/eval_outputs.txt`
+
+ESIM baseline: Releasing soon after some polish
 
 ## Citation
 See the following paper:
