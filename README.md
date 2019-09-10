@@ -4,7 +4,7 @@ Dataset and code for “Going on a vacation” takes longer than “Going for a 
 ## Dataset
 We provide the dev/test split as specified in the paper, along with a detailed readme.txt file under `data/`
 
-## Leaderboard
+## Leaderboard (Coming soon)
 http://leaderboard.allenai.org/mctaco
 
 ## Experiments (WIP)
