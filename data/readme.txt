@@ -15,6 +15,8 @@ The dataset files are:
  * dev_3783.tsv : the dev set, containing 561 questions and 3783 candidate answers.
  * test_9442.tsv : the test set, containing 1332 questions and 9442 candidate answers.
 
+Note there is no training data, and we provide the dev set as the only source of supervision. Please see details in the paper.
+
 In each file (dev_3783.tsv and test_9442.tsv), there are lines of tab-separated data, each line representing an instance of a question-answer pair.
 Specifically, the format is as the following:
 
