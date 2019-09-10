@@ -15,8 +15,6 @@ The dataset files are:
  * dev_3783.tsv : the dev set, containing 561 questions and 3783 candidate answers.
  * test_9442.tsv : the test set, containing 1332 questions and 9442 candidate answers.
 
-Note there is no training data, and we provide the dev set as the only source of supervision. Please see details in the paper.
-
 In each file (dev_3783.tsv and test_9442.tsv), there are lines of tab-separated data, each line representing an instance of a question-answer pair.
 Specifically, the format is as the following:
 
@@ -26,7 +24,11 @@ sentence \t  question \t  answer \t label \t category
  * question: a question querying some temporal knowledge.
  * answer: a potential answer to the question. all lowercase. 
  * label: whether the answer is a correct (likely) answer. "yes" indicates the answer is likely, "no" otherwise.
- * category: the temporal category the question belongs to one of Event Ordering, Event  Duration", Frequency, Stationarity, or Typical Time. 
+ * category: the temporal category the question belongs to one of Event Ordering, Event  Duration", Frequency, Stationarity, or Typical Time.
+
+Note there is no training data, and we provide the dev set as the only source of supervision.
+The rationale is that we believe a successful system has to bring in a huge amount of world knowledge and derive commonsense understandings prior to the current task evaluation.
+We therefore believe that it is not reasonable to expect a system to be trained solely on this data, and we think of the development data as only providing a definition of the task.
 
 ===========
 EVALUATION
