@@ -1,5 +1,5 @@
 import argparse
-
+import json
 
 """
 Example Usage: 
@@ -9,9 +9,10 @@ python experiments/evaluator.py eval --test_file data/test_9442.tsv --prediction
 
 class McTacoEvaluator:
 
-    def __init__(self, test_file, output_file):
+    def __init__(self, test_file, output_file, output):
         self.test_file = test_file
         self.output_file = output_file
+        self.output = output
 
     def print_result(self):
         ref_lines = [x.strip() for x in open(self.test_file).readlines()]
@@ -62,6 +63,14 @@ class McTacoEvaluator:
         print("Strict Acc.: " + str(correct / total))
         print("Avg F1: " + str(f1 / total))
 
+        if self.output:
+            print("Writing results to file: %s" % self.output)
+            with open(self.output, "wt", encoding="UTF-8") as output:
+                output.write(json.dumps({
+                    "em": correct / total,
+                    "f1": f1 / total
+                }))
+
     def print_errors(self):
         pass
 
@@ -75,10 +84,13 @@ def main():
     parser.add_argument("--prediction_file",
                         required=True,
                         help="path to the line-by-line file containing system predictions.")
+    parser.add_argument(
+        '--output', '-o',
+        help='Output results to this file.')
 
     args = parser.parse_args()
     if args.command == "eval":
-        evaluator = McTacoEvaluator(args.test_file, args.prediction_file)
+        evaluator = McTacoEvaluator(args.test_file, args.prediction_file, args.output)
         evaluator.print_result()
     else:
         print("Command not found, see --help.")
