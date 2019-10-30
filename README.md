@@ -25,7 +25,7 @@ sh experiments/bert/run_bert_baseline.sh
 Evaluate the predictions with which you can further evaluate with the following command: 
 
 ```bash 
-python ../evaluator/evaluator.py eval --test_file data/test_9442.tsv --prediction_file bert_output/eval_outputs.txt
+python evaluator/evaluator.py eval --test_file dataset/test_9442.tsv --prediction_file bert_output/eval_outputs.txt
 ```
 
 ESIM baseline: Releasing soon after some polish
